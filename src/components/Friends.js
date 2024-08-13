@@ -13,7 +13,7 @@ export default function Friends({ setShowFriends }) {
             const conn = myPeer.connect(remoteId);
             setConnection(conn)
             setRemoteId(remoteId)
-            //connectAudio(remoteId)
+            connectAudio(remoteId)
         } else {
             console.error('Peer is not initialized yet.');
         }
