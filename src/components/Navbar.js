@@ -11,10 +11,15 @@ import Friends from "./Friends";
 
 const Navbar = () => {
   const [showFriends, setShowFriends] = useState(false);
+  const [julie,setJulie] = useState(true);
 
   const toggleFriends = () => {
     setShowFriends(!showFriends);
   };
+
+  const changePerson = () => {
+    setJulie(!julie)
+  }
 
   return (
     <div className="">
@@ -54,9 +59,19 @@ const Navbar = () => {
             <MdLogin className="text-[17px] rotate-90" />
             <p className="text-[16px] font-semibold">Register</p>
           </div>
-          <div className="flex items-center gap-2 hover:bg-[#06529a] p-3 rounded-full whitespace-nowrap">
-            <MdLogout className="text-[20px] -rotate-90" />
-            <p className="text-[16px] font-semibold">Sign in</p>
+          <div onClick={changePerson} className="flex items-center gap-2 hover:bg-[#06529a] p-3 rounded-full whitespace-nowrap">
+            {/* <MdLogout className="text-[20px] -rotate-90" />
+            <p className="text-[16px] font-semibold">Sign in</p> */}
+            {julie?(
+              <div className="flex items-center gap-2">
+                <div>Julie</div>
+                <img width={40} className="rounded-lg" src="https://www.befunky.com/images/wp/wp-2021-01-linkedin-profile-picture-after.jpg?auto=avif,webp&format=jpg&width=944"/>
+            </div>):(
+              <div className="flex items-center gap-2">
+                <div>Mom</div>
+            <   img width={40} className="rounded-lg" src="https://sarahclaysocial.com/wp-content/uploads/2020/10/sarah-clay-3.jpg"/>
+              </div>)
+            }
           </div>
           <div className="hover:bg-[#06529a] p-3 rounded-full">
             <AiOutlineShoppingCart className="w-7 h-7" />
